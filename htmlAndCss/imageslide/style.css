@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    background-color:whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.imgbox {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       justify-content: center;
+
+}
+
+.imgbox div{
+    height: 20vh;
+    width: 10vw;
+    margin: 10px;
+    background-image: url("https://source.unsplash.com/random");
+    border: 2px solid black;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.imgareadiv{
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 768px){
+    .imgbox{
+        display: flex;
+        direction: column;
+    }
+}
+    
+
+.imgarea{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 50vh;
+    width: 30vw;
+    padding: 10px;
+    margin: 10px;
+    background-image:  url("https://source.unsplash.com/random/?nature,adventure");
+    background-size:100% 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: changeimg 20s linear  infinite ;
+    animation-direction: alternate-reverse;
+    animation-timing-function:ease-in-out;
+    animation-delay: 2s;
+    
+}
+@keyframes changeimg{
+    0%{
+        background-image: url("https://source.unsplash.com/random/?nature,adventure");
+    }
+    25%{
+        background-image: url("https://source.unsplash.com/random/?nature,water");
+    }
+    50%{
+        background-image: url("https://source.unsplash.com/random/?nature,fire");
+    }
+    75%{
+        background-image: url("https://source.unsplash.com/random/?nature,flowers");
+    }
+    100%{
+        background-image: url("https://source.unsplash.com/random/?nature,India");
+    }
+}

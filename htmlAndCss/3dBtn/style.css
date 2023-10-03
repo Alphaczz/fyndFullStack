@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    font-family: 'Black Ops One', cursive;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color:#fcaf17ff;
+    color:whitesmoke;
+    box-shadow: 8px 8px 0px 0px  rgb(114, 78, 6);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    overflow: hidden;
+    transition: 0.2s;
+    pointer: cursor;
+}
+
+.btn:hover{
+   outline: 5px solid white;
+  
+   transform: translate3d(6px,6px,0px);
+   transition:ease-in-out;
+   box-shadow:  2px 2px 0px 0px  rgb(114, 78, 6);
+   -webkit-transform: translate3d(6px,6px,0px);
+   -moz-transform: translate3d(6px,6px,0px);
+   -ms-transform: translate3d(6px,6px,0px);
+   -o-transform: translate3d(6px,6px,0px);
+   -webkit-transition:ease-in-out;
+   -moz-transition:ease-in-out;
+   -ms-transition:ease-in-out;
+   -o-transition:ease-in-out;
+}
+.btn:active{
+  outline: none;
+   transform: translate3d(0px,0px,0px);
+   box-shadow:  8px 8px 0px 0px  rgb(114, 78, 6);
+   animation-name: btnclicked;
+   transition:ease-in-out;
+   animation-duration: 1s;
+  
+   
+   
+  
+}
+a:link,:visited{
+    color: rgb(95, 65, 5);
+    text-decoration: none;
+    
+   
+}
