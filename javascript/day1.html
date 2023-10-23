@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Loop Example</title>
+</head>
+<body>
+    <h1>For Loop Example</h1>
+    <ul id="list" ></ul>
+    <h1>While Loop Example</h1>
+    <ul id="list1"></ul>
+    <h1>do While Loop Example</h1>
+    <ul id="demo"></ul>
+    <ul>
+        <button  onclick="displayDate()">The time is?</button>
+    </ul>
+
+    <script>
+// +	Addition
+// -	Subtraction
+// *	Multiplication
+// **	Exponentiation (ES2016)
+// /	Division
+// %	Modulus (Remainder)
+// ++	Increment
+// --	Decrement
+        let p=2;
+        let q=3;
+        r=p**q;
+        console.log(r);
+        r=r++;
+        console.log(r);
+        r++;
+        console.log(r);
+        r=r%2;
+        console.log(r);
+        r=r%3+(p++);
+        console.log(r);
+        console.log(p);
+        r=r%3+(++p);
+        console.log(r);
+
+        for (let i = 1; i <= 5; i++) {
+     
+            let listItem = document.createElement("li");
+            listItem.textContent = "Item " + i;
+            document.getElementById("list").appendChild(listItem);
+        }
+        let i = 1;
+        while (i <= 5) {
+            let listItem = document.createElement("li");
+            listItem.textContent = "Item " + i;
+            document.getElementById("list1").appendChild(listItem);
+            i++;
+        }
+
+        let j = 1;
+
+do {
+    let listItem = document.createElement("li");
+    listItem.textContent = "Item " + j;
+    document.getElementById("list3").appendChild(listItem);
+
+    i++;
+} while (j <= 0);
+////////////////////
+function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
+   
+    </script>
+
+   
+    
+
+</body>
+</html>

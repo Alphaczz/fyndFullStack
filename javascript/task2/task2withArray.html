@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="card">
+        <form id="input">
+          <h2 style="text-align: center">Student Entry</h2>
+          <div class="inside_card">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" />
+          </div>
+          <div class="inside_card">
+            <label for="roll">Roll No</label>
+            <input
+              type="text"
+              name="roll"
+              id="roll"
+              placeholder="Enter Roll No"
+            />
+          </div>
+          <div class="inside_card">
+            <label for="class">Class</label>
+            <input
+              type="text"
+              name="class"
+              id="class"
+              placeholder="Enter Class"
+            />
+          </div>
+          <div class="inside_card">
+            <label for="marks">Marks</label>
+            <input
+              type="text"
+              name="marks"
+              id="marks"
+              placeholder="Enter Marks"
+            />
+          </div>
+          <div class="inside_card">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email ID"
+            />
+          </div>
+          <div class="submit">
+            <button onclick="makeStudent()">Submit</button>
+          </div>
+        </form>
+        <br />
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+        <br />
+        <div class="tableAll">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyAll"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      const studentArray = [];
+      class student {
+        constructor(name, roll, classs, marks, email) {
+          this.name = name;
+          this.roll = roll;
+          this.classs = classs;
+          this.marks = marks;
+          this.email = email;
+        }
+      }
+
+      function makeStudent() {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const roll = document.getElementById("roll").value;
+        const classs = document.getElementById("class").value;
+        const marks = document.getElementById("marks").value;
+        const email = document.getElementById("email").value;
+        const student1 = new student(name, roll, classs, marks, email);
+        studentArray.push(student1);
+        console.log(studentArray);
+        showAbove80(studentArray);
+        displayAll(studentArray);
+        let name1 = (document.getElementById("name").value = "");
+        let roll1 = (document.getElementById("roll").value = "");
+        let classs1 = (document.getElementById("class").value = "");
+        let marks1 = (document.getElementById("marks").value = "");
+        let email1 = (document.getElementById("email").value = "");
+      }
+      function showAbove80(studentArray) {
+        document.getElementById("tbody").innerHTML = "";
+        studentArray.filter((element) => {
+          if (element.marks > 80) {
+            document.getElementById("tbody").innerHTML += `<tr>
+                    <th>${element.name}</th>
+                    <th>${element.marks}</th>
+                    </tr>`;
+            console.log(element.name);
+          }
+        });
+      }
+      function displayAll(studentArray) {
+        document.getElementById("tbodyAll").innerHTML = "";
+        studentArray.map((element) => {
+          document.getElementById("tbodyAll").innerHTML += `<tr>
+                    <th>${element.name}</th>
+                    <th>${element.marks}</th>
+                    </tr>`;
+        });
+      }
+      document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key === "s") {
+          event.preventDefault();
+          alert("Control S pressed");
+          showshortcut();
+        }
+      });
+
+      function showshortcut() {
+        console.log("Data saved");
+      }
+
+      displayAll(studentArray);
+      showAbove80(studentArray);
+    </script>
+  </body>
+</html>

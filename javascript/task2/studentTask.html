@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            
+            <form id="input">
+                <h2 style="text-align: center;">Student Entry</h2>
+                <div class="inside_card">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name">
+                </div>
+                <div class="inside_card">
+                    <label for="roll">Roll No</label>
+                    <input type="text" name="roll" id="roll" placeholder="Enter Roll No">
+                </div>
+                 <div class="inside_card">
+                    <label for="class">Class</label>
+                    <input type="text" name="class" id="class" placeholder="Enter Class">
+                 </div>
+              <div class="inside_card">
+                    <label for="marks">Marks</label>
+                    <input type="text" name="marks" id="marks" placeholder="Enter Marks">
+              </div>
+             <div class="inside_card">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Email ID">
+             </div>
+                <div class="submit" >
+
+    <button onclick="makeStudent()">Submit</button>
+             
+ </div>
+            </form>
+            <br>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th >Name</th>
+                            <th>Roll No</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                   
+                </table>
+            </div>
+            <br>
+            <div class="tableAll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th >Name</th>
+                            <th>Roll No</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyAll">
+                        
+                    </tbody>
+                   
+                </table>
+            </div>
+        </div>
+       
+       
+    </div>
+    <script>
+        class student{
+            constructor(name,roll,classs,marks,email){
+                this.name=name;
+                this.roll=roll;
+                this.classs=classs;
+                this.marks=marks;
+                this.email=email;
+            }
+            
+            displayIfGreaterThan80(){
+                if(this.marks>80){
+                    document.getElementById("tbody").innerHTML +=`<tr>
+                    <th>${this.name}</th>
+                    <th>${this.marks}</th>
+                    </tr>`;
+                }
+            }
+            display(){
+                document.getElementById("tbodyAll").innerHTML +=`<tr>
+                    <th>${this.name}</th>
+                    <th>${this.marks}</th>
+                    </tr>`;
+            }
+        }
+       
+        function makeStudent()
+        {        event.preventDefault();
+            const name=document.getElementById("name").value;
+             const roll=document.getElementById("roll").value;
+             const classs=document.getElementById("class").value;
+             const marks=document.getElementById("marks").value;
+             const email=document.getElementById("email").value; 
+             const student1=new student(name,roll,classs,marks,email);
+            student1.displayIfGreaterThan80();
+            student1.display();
+            console.log(student1);
+        }
+    </script>
+</body>
+</html>

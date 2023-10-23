@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel check</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <h3>Check Vowels</h3>
+            <input type="text"placeholder='Enter Text' id="textinput">
+            <button type="submit" id="btn" onclick="getVowelCount()">Check Vowels</button>
+            <p id="output"></p>
+        </div>        
+    </div>
+   <script>
+    const checkString = ['a', 'e', 'i', 'o', 'u'];
+
+    // Move the text variable inside the function so that it gets the current value of the input.
+    function getVowelCount() {
+        let text = document.getElementById('textinput').value; // Move this line inside the function
+        text = text.toLowerCase(); // Assign the lowercase value to text
+
+        let count = 0;
+        for (let i = 0; i < text.length; i++) {
+            if (checkString.includes(text.charAt(i))) { // Remove the semicolon here
+                count++;
+                console.log(text.charAt(i));
+            }
+        }
+        console.log(count);
+        document.getElementById('output').innerHTML = `In text ${text} : Vowels count is ${count}`;
+        document.getElementById('textinput').value="";
+    }
+</script>
+
+</body>
+</html>

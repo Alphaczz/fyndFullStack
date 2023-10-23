@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="discountPrice"></p>
+   
+    <button onclick="displayDiscount()">
+            <h6> GetDiscount</h6> 
+    </button>
+    <h1 id="customerName"></h1>
+    <button onclick="ask((showUser()),no)">
+        <h6>Customer Name</h6> 
+</button>
+
+    <script>
+        class user{
+            constructor(name,price,discount,email)
+            {
+                this.price=price;
+                this.name=name;
+                this.discount=discount;
+                this.email=email;
+            }
+            calculateDiscount()
+            {
+
+                return  this.discount*10/100*this.price;
+            }
+          
+        }
+        const customer=new user("shampoo",100,10,"shivam@gmail.com")
+        function calculateDiscount(ogPrice)
+            {
+                discount=10/100*ogPrice;
+                return ogPrice*discount;
+            }
+            let name=new String("shivam")
+            let name1=new String("shiv")
+            if(name.value()==name1.value())
+            {
+                console.log("same")
+            }
+            else{
+                console.log("not same")
+            }
+        function showUser(){
+            document.getElementById("customerName").innerHTML=customer.name;
+        }
+        function displayDiscount() {
+         document.getElementById("discountPrice").innerHTML =customer.calculateDiscount() ;
+    }
+    function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  () => alert("You agreed."),
+  () => alert("You canceled the execution.")
+);
+    </script>
+</body>
+</html>
